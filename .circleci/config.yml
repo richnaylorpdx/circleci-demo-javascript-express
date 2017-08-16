@@ -57,7 +57,9 @@ jobs:
       - attach_workspace:
           at: /root
       - setup_remote_docker:
-			    reusable: true
+          version: 17.05.0-ce
+          reusable: true
+          exclusive: true
       - run:
           name: install docker client
           command: |
