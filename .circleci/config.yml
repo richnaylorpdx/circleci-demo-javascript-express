@@ -68,7 +68,7 @@ jobs:
       - run:
           name: Build and Push Docker Image
           command: |
-            docker build -t levlaz/circleci-demo-js-express .
+            docker build -t levlaz/circleci-demo-js-express:$CIRCLE_SHA1 .
             docker tag levlaz/circleci-demo-js-express:$CIRCLE_SHA1 levlaz/circleci-demo-js-express:stable
             docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
             docker push levlaz/circleci-demo-js-express
