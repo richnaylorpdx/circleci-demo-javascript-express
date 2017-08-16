@@ -34,5 +34,5 @@ test('returns the error', t => {
 });
 
 test('return failure', t => {
-	return false;
+  t.deepEqual(true, false);
 });
