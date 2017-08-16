@@ -73,7 +73,7 @@ jobs:
           command: |
             docker build -t levlaz/circleci-demo-js-express:$CIRCLE_SHA1 .
             docker tag levlaz/circleci-demo-js-express:$CIRCLE_SHA1 levlaz/circleci-demo-js-express:stable
-            docker -u $DOCKER_USER -p $DOCKER_PASS
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push levlaz/circleci-demo-js-express
 
   deploy:
