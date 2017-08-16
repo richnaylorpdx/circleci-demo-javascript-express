@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scp docker-compose.yml ubuntu@34.211.187.29:
+yes | scp docker-compose.yml ubuntu@34.211.187.29:
 
 ssh ubuntu@34.211.187.29 'sudo docker-compose pull'
 ssh ubuntu@34.211.187.29 'sudo docker-compose build'
