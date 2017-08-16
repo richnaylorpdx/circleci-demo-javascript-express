@@ -56,7 +56,8 @@ jobs:
     steps:
       - attach_workspace:
           at: /root
-      - setup_remote_docker
+      - setup_remote_docker:
+					reusable: true
       - run:
           name: install docker client
           command: |
@@ -70,7 +71,7 @@ jobs:
           command: |
             docker build -t levlaz/circleci-demo-js-express:$CIRCLE_SHA1 .
             docker tag levlaz/circleci-demo-js-express:$CIRCLE_SHA1 levlaz/circleci-demo-js-express:stable
-            docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+            docker -u $DOCKER_USER -p $DOCKER_PASS
             docker push levlaz/circleci-demo-js-express
 
   deploy:
