@@ -56,7 +56,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /root
-      - setup_remote_docker:
+			- setup_remote_docker:
 					reusable: true
       - run:
           name: install docker client
