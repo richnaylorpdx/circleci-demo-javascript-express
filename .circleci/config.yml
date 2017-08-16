@@ -84,7 +84,7 @@ jobs:
       - run:
           name: deploy to AWS
           command: |
-            ./script/deploy.sh
+            ./scripts/deploy.sh
 
 
 
